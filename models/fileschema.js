@@ -19,6 +19,13 @@ const itemSchema=new mongoose.Schema({
     },
     status:{
         type:String,
+    },
+    cost:{
+        type:Number
+    },
+    quantity:{
+        type:Number,
+        required:true
     }
 })
 
