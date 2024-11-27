@@ -55,4 +55,16 @@ const removeFavourite = async (req, res) => {
     }
 };
 
-module.exports={addFavourite,removeFavourite}
+// get all products in favourites
+const allfavourites=async(req,res)=>{
+    try{
+        const addfavouriteProducts=await Favourite.find()
+        res.status(200).json({message:"get users successfully",addfavouriteProducts})
+    }
+    catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+
+}
+
+module.exports={addFavourite,removeFavourite,allfavourites}
