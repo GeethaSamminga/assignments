@@ -11,11 +11,8 @@ const addFavouriteSchema = new mongoose.Schema({
         ref:"Item",
         required:true,
     },
-    addedAt:{
-        type:Date,
-        default:Date.now()
-    }
-})
+   
+},{ timestamps: true })
 
 const Favourite=mongoose.model("Favourite",addFavouriteSchema)
 

@@ -5,13 +5,13 @@ const { isAuthenticated, isMember } = require("../middleware/auth");
 const router=express.Router();
 
 // add to favourite
-router.get("/favourite/add/",isAuthenticated,isMember,addFavourite)
+router.get("/favourite/add",addFavourite)
 
 // remove favourite
-router.delete("/favourite/remove",isAuthenticated,isMember,removeFavourite)
+router.delete("/favourite/remove",removeFavourite)
 
 // get all favourites
-router.get("/favourite/all",isAuthenticated,isMember,allfavourites)
+router.get("/favourite/all",isAuthenticated,allfavourites)
 
 module.exports=router;
 

@@ -1,4 +1,5 @@
-const mongoose=require("mongoose")
+const mongoose=require("mongoose");
+const joi = require("joi")
 
 const userSchema=new mongoose.Schema({
     name:{
@@ -13,16 +14,12 @@ const userSchema=new mongoose.Schema({
          type:String,
          required:true
             },
-    phone:{
-        type:Number,
-        unique:true
-        },
      role:{
             type:String,
             enum: ['admin', 'user'],
             default:"user"
         }
-})
+},{ timestamps: true })
 const User=mongoose.model("User",userSchema);
 
 module.exports=User

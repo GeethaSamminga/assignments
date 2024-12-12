@@ -8,9 +8,10 @@ const isAuthenticated = async (req, res, next) => {
 
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       req.user = decoded;
+      console.log(req.user)
       next();
     } catch (error) {
-      res.status(401).json({ message: "Unauthorized" });
+      res.status(401).json({ message: "User must register first" });
     }
   } else {
     return res.status(401).json({
@@ -22,7 +23,7 @@ const isAuthenticated = async (req, res, next) => {
 
 const isAdmin = (req, res, next) => {
   const user = req.user;
-  console.log("Authenticated User:", user);
+  // console.log("Authenticated User:", user);
 
   if (!user) {
     return res.status(401).json({ message: "User not authenticated" });

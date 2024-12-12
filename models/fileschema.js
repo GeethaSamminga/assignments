@@ -26,8 +26,9 @@ const itemSchema=new mongoose.Schema({
     quantity:{
         type:Number,
         required:true
-    }
-})
+    },
+   
+},{ timestamps: true })
 
 const Item= mongoose.model("Item",itemSchema)
 

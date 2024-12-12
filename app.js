@@ -1,6 +1,8 @@
 const express=require("express");
 const app=express();
-const path=require("path")
+const path=require("path");
+const multer=require("multer");
+const upload=require("./middleware/multerfile")
 
 app.use(express.json());
 app.use('/store', express.static(path.join(__dirname, 'store')));
